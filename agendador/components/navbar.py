@@ -11,8 +11,17 @@ def navbar() -> rx.Component:
             color=styles.ACCENT_COLOR
         ),
         rx.spacer(),  # Empuja lo siguiente a la derecha
-        rx.button("Inicio", variant="ghost"),
-        rx.button("Acerca de", variant="ghost"),
+        # --- NUEVOS ENLACES ---
+        # Envolvemos el botón en un rx.link
+        rx.link(
+            rx.button("Inicio", variant="ghost"),
+            href="/"
+        ),
+        rx.link(
+            rx.button("Calendario", variant="ghost"),
+            href="/calendario"
+        ),
+        # ----------------------
 
         position="sticky",
         top="0px",

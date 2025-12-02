@@ -1,29 +1,28 @@
 import reflex as rx
 from .components.navbar import navbar
 from .views.header import header_view
-from .views.counter import counter_view
-from .styles.styles import BASE_STYLE, STYLESHEETS
+from .views.todo import todo_view
+from .pages.schedule import schedule_page  # <--- 1. NUEVO IMPORT
+from .styles import styles
 
 
 def index() -> rx.Component:
     return rx.box(
         navbar(),
-        rx.vstack(            # Usamos vstack para apilar el header y el contador
+        rx.vstack(
             header_view(),
-            rx.divider(),     # Una línea separadora visual
-            counter_view(),   # <--- AQUI AGREGAMOS EL CONTADOR
-
+            rx.divider(),
+            todo_view(),
             spacing="5",
-            align_items='center',
+            align_items="center",
             width="100%",
             padding_bottom="4em"
-        ),
+        )
     )
 
 
-# Configuramos la app e inyectamos el estilo global
-app = rx.App(
-    stylesheets=STYLESHEETS,
-    style=BASE_STYLE
-)
-app.add_page(index)
+app = rx.App(style=styles.BASE_STYLE, stylesheets=styles.STYLESHEETS)
+
+# 2. DEFINICIÓN DE RUTAS
+app.add_page(index, route="/")  # La raíz (Home)
+app.add_page(schedule_page, route="/calendario")  # La nueva página
