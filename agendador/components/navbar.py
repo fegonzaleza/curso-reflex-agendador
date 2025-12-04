@@ -18,6 +18,10 @@ def navbar() -> rx.Component:
             href="/"
         ),
         rx.link(
+            rx.button("chat", variant="ghost"),
+            href="/chat"
+        ),
+        rx.link(
             rx.button("Calendario", variant="ghost"),
             href="/calendario"
         ),

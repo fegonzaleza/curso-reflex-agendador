@@ -2,7 +2,8 @@ import reflex as rx
 from .components.navbar import navbar
 from .views.header import header_view
 from .views.todo import todo_view
-from .pages.schedule import schedule_page  # <--- 1. NUEVO IMPORT
+from .pages.schedule import schedule_page   # <--- 1. NUEVO IMPORT
+from .pages.chat import chat_page           # <--- 2. NUEVO IMPORT
 from .styles import styles
 
 
@@ -26,3 +27,4 @@ app = rx.App(style=styles.BASE_STYLE, stylesheets=styles.STYLESHEETS)
 # 2. DEFINICIÓN DE RUTAS
 app.add_page(index, route="/")  # La raíz (Home)
 app.add_page(schedule_page, route="/calendario")  # La nueva página
+app.add_page(chat_page, route="/chat")
