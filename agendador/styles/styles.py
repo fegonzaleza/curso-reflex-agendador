@@ -6,11 +6,11 @@ TEXT_COLOR = "#FFFFFF"    # Blanco
 ACCENT_COLOR = "#3b82f6"  # Azul brillante para destacar
 
 STYLESHEETS = [
-    "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    "https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
 ]
 # Estilo base para toda la app
 BASE_STYLE = {
-    "font_family": 'Work Sans',
+    "font_family": 'Google Sans Flex',
     "background_color": PRIMARY_COLOR,
     "color": TEXT_COLOR,
 }
