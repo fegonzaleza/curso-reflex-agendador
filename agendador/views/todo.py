@@ -56,7 +56,7 @@ def todo_view() -> rx.Component:
                 value=TodoState.new_task,
                 on_change=TodoState.set_new_task,  # Cada letra que escribes va al estado
                 width="100%",
-                bg="#252525",
+                # bg="#252525",
                 border="none"
             ),
             rx.button("Añadir", on_click=TodoState.add_task),
